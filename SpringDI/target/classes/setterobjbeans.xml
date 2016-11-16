@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="address1" class="com.setter.obj.Address">  
+<property name="addressLine1" value="71stcross, kslayout"></property>  
+<property name="city" value="bangalore"></property>  
+<property name="state" value="ka"></property>  
+<property name="country" value="India"></property>  
+</bean>  
+  
+<bean id="obj" class="com.setter.obj.Employee">  
+<property name="id" value="1"></property>  
+<property name="name" value="praveen"></property>  
+<property name="address" ref="address1"></property>  
+</bean>  
+  
+</beans>  

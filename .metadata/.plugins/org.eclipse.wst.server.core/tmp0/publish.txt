@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Nov 16 09:54:27 IST 2016
+org.eclipse.jst.j2ee.server\:/binary\:/home/bridgeit/.m2/repository/org/springframework/spring-web/4.3.1.RELEASE/spring-web-4.3.1.RELEASE.jar=WEB-INF/lib/spring-web-4.3.1.RELEASE.jar
+org.eclipse.jst.j2ee.server\:/binary\:/home/bridgeit/workspace/SpringCountry/newcountry/src/main/webapp/WEB-INF/lib/spring-web-4.1.6.RELEASE-sources.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE-sources.jar

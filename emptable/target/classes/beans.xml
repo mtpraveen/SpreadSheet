@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/samples"/>
+<property name="username" value="root"/>
+<property name="password" value="root"/>
+</bean>
+<bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+<property name="dataSource" ref="myDataSource"/>
+<property name="mappingResources">
+<list>
+<value>/employee.hbm.xml</value>
+</list>
+</property>
+<property name="hibernateProperties">
+<value>hibernate.dialect=org.hibernate.dialect.HSQLDialect</value>
+</property>
+</bean>
+<bean id="hibernateTemplate"
+class="org.springframework.orm.hibernate4.HibernateTemplate">
+<property name="sessionFactory">
+<ref bean="mySessionFactory"/>
+</property>
+</bean>
+<bean id="EmployeeDao" class="javabeat.spring.hibernate.EmployeeDao">
+<property name="hibernateTemplate">
+<ref bean="hibernateTemplate"/>
+</property>
+</bean>
+
+</beans>
